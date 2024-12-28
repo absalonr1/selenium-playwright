@@ -34,9 +34,11 @@ python -m venv pw
 source pw/in/activate
 pip install playwright
 playwright install
-pip install pyinstaller
+set PLAYWRIGHT_BROWSERS_PATH=0
+playwright install chromium
 
 #generar ejecutable
+pip install pyinstaller
 pyinstaller --onefile login-vsp.py
 deactivate
 ```
