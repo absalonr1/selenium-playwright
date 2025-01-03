@@ -44,8 +44,9 @@ WantedBy=multi-user.target
 ```
 
 Commands:
-
+```
 sudo systemctl daemon-reload
 sudo systemctl enable uvicorn.service
 sudo systemctl start uvicorn.service
 sudo systemctl status uvicorn.service
+```
