@@ -24,7 +24,7 @@ curl http://ec2-a-b-c-d.compute-1.amazonaws.com:8000/execute/login-vidatres-pw-i
 
 ## systemd
 
-Service file
+Service file "/etc/systemd/system/uvicorn.service"
 
 ```
 [Unit]
