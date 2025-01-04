@@ -50,3 +50,13 @@ sudo systemctl enable uvicorn.service
 sudo systemctl start uvicorn.service
 sudo systemctl status uvicorn.service
 ```
+
+## Instalar un servidor gráfico virtual
+Instala y configura un servidor gráfico como Xvfb (X virtual framebuffer), que permitirá ejecutar aplicaciones gráficas sin necesidad de un monitor físico ni una conexión activa.
+
+```
+sudo apt update
+sudo apt install xvfb -y
+# ejemplo ficticio
+xvfb-run -a python3 script.py
+```
