@@ -1,9 +1,10 @@
 ## EC2 Setup
 
 ```
+sudo apt-get update
 sudo apt-get -y install podman
 which qemu-system-x86_64
-#sudo apt install -y qemu qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
+#sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
 sudo apt install -y qemu-system
 which qemu-system-x86_64
 podman machine init
