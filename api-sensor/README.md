@@ -8,7 +8,7 @@ sudo apt-get -y install podman
 #sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
 podman machine init
 
-apt install python3.12-venv
+sudo apt install python3.12-venv -y
 ```
 
 ## VENV setup
