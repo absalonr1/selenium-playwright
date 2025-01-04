@@ -2,11 +2,10 @@
 
 ```
 sudo apt-get update
-sudo apt-get -y install podman
-which qemu-system-x86_64
-#sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
 sudo apt install -y qemu-system
-which qemu-system-x86_64
+sudo apt-get -y install podman
+#which qemu-system-x86_64
+#sudo apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
 podman machine init
 
 apt install python3.12-venv
