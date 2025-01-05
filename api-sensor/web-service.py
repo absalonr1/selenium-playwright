@@ -3,15 +3,12 @@ import subprocess
 
 app = FastAPI()
 
-# Define the cpu variable
-cpu = "0.5"
-
-@app.get("/execute/{script_name}")
-def execute_command(script_name: str):
+@app.get("/execute/{cpu}/{script_name}")
+def execute_command(cpu: str, script_name: str):
     try:
         # Define comandos según el script_name usando un switch-like estructura
         command = [
-            "podman", "run",  "--env-file", ".env", "--cpus", cpu, "--rm", 
+            "docker", "run",  "--env-file", ".env", "--cpus", cpu, "--rm", 
             "playwright-python", "python", script_name
         ]
 
