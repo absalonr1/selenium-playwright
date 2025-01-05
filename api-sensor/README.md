@@ -20,6 +20,7 @@ pip install fastapi uvicorn
 ```
 uvicorn web-service:app --reload --workers 4 --host 0.0.0.0 --port 8000
 curl http://localhost:8000/execute/0.5/login-vidatres-pw-iframe.py
+curl -v -w '\n* Response time: %{time_total}s\n'  http://xxx.amazonaws.com:8000/execute/0.5/login-vidatres-pw-iframe.py
 ```
 
 ## systemd
