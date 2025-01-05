@@ -1,41 +1,19 @@
-
 from fastapi import FastAPI, HTTPException
 import subprocess
 
 app = FastAPI()
 
+# Define the cpu variable
+cpu = "0.5"
+
 @app.get("/execute/{script_name}")
 def execute_command(script_name: str):
     try:
         # Define comandos según el script_name usando un switch-like estructura
-        command = []
-        if script_name == "login-crm-pw.py":
-            command = [
-                "podman", "run",  "--env-file", ".env", "--cpus", "0.5", "--rm", 
-                "playwright-python", "python", "login-crm-pw.py"
-            ]
-        elif script_name == "login-empleadores-bm-pw.py":
-            command = [
-                "podman", "run",  "--env-file", ".env", "--cpus", "0.5", "--rm", 
-                "playwright-python", "python", "login-empleadores-bm-pw.py"
-            ]
-        elif script_name == "login-empleadores-vt-pw.py":
-            command = [
-                "podman", "run",  "--env-file", ".env", "--cpus", "0.5", "--rm", 
-                "playwright-python", "python", "login-empleadores-vt-pw.py"
-            ]
-        elif script_name == "login-helpseguros-pw.py":
-            command = [
-                "podman", "run",  "--env-file", ".env", "--cpus", "0.5", "--rm", 
-                "playwright-python", "python", "login-helpseguros-pw.py"
-            ]
-        elif script_name == "login-vidatres-pw-iframe.py":
-            command = [
-                "podman", "run",  "--env-file", ".env", "--cpus", "0.5", "--rm", 
-                "playwright-python", "python", "login-vidatres-pw-iframe.py"
-            ]
-        else:
-            raise HTTPException(status_code=400, detail="Invalid script name specified")
+        command = [
+            "podman", "run",  "--env-file", ".env", "--cpus", cpu, "--rm", 
+            "playwright-python", "python", script_name
+        ]
 
         # Ejecuta el comando y captura la salida
         result = subprocess.run(command, capture_output=True, text=True, check=True)
