@@ -19,7 +19,7 @@ pip install fastapi uvicorn
 ## Local test
 ```
 uvicorn web-service:app --reload --workers 4 --host 0.0.0.0 --port 8000
-curl http://ec2-a-b-c-d.compute-1.amazonaws.com:8000/execute/login-vidatres-pw-iframe.py
+curl http://localhost:8000/execute/0.5/login-vidatres-pw-iframe.py
 ```
 
 ## systemd
